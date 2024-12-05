@@ -1,9 +1,12 @@
 #=============
 #|| Imports ||
 #=============
-import config, random, nextcord, logging
-from nextcord.ext import commands, tasks, application_checks# type: ignore
-from nextcord import Interaction, SlashOption
+import config
+import random
+import nextcord
+import logging
+from nextcord.ext import commands, application_checks# type: ignore
+from nextcord import Interaction
 from nextcord.utils import get
 #===================
 #|| Configuration ||
@@ -45,12 +48,6 @@ async def on_ready():
 #===============
 #|| Commands ||
 #===============
-#[] Work Help []
-@bot.command()
-async def workhelp(ctx,*,ticket):
-    print(f"{ctx.author} requested help with ticket {ticket}")
-    message = nextcord.Embed(title="Work Help Request", description=f"<@&1282896327767756830> {ctx.author} needs help! {ticket}", color=0x00ff00)
-    await ctx.send(embed=message)
 
 #===========================
 #|| Application Commands ||
@@ -115,7 +112,7 @@ async def rando(interaction:Interaction):
 @bot.event
 async def on_application_command_error(interaction:Interaction, error):
     if isinstance(error, application_checks.ApplicationBotMissingPermissions):
-        await interaction.send(f"You don't have permission to run that!")
+        await interaction.send("You don't have permission to run that!")
     elif isinstance(error, commands.MissingRequiredArgument):
         await interaction.send("You forgot something...")
     else:
