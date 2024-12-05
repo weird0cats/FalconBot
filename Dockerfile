@@ -20,4 +20,4 @@ WORKDIR /app
 RUN uv sync --frozen
 
 # Presuming there is a `my_app` command provided by the project
-CMD ["uv", "run", "my_app"]
+CMD ["uv", "run", "falconbot.py"]
