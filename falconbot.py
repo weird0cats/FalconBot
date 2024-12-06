@@ -5,12 +5,14 @@ import config
 import random
 import nextcord
 import logging
+import jsonfs
 from nextcord.ext import commands, application_checks# type: ignore
 from nextcord import Interaction
 from nextcord.utils import get
 #===================
 #|| Configuration ||
 #===================
+token=jsonfs.read("token.json")["token"]
 intents=nextcord.Intents.default()
 intents.members=True
 intents.message_content=True
@@ -120,5 +122,5 @@ async def on_application_command_error(interaction:Interaction, error):
 #=========
 #|| Run ||
 #=========
-bot.run(config.nickruth)
+bot.run(token)
 # Created by Weird0cats - hosted on the deskPi server
