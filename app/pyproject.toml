@@ -1,7 +1,7 @@
 [project]
-name = "falconbot"
+name = "app"
 version = "0.1.0"
-description = "A discord bot for verification management"
+description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
